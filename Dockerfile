@@ -19,7 +19,4 @@ COPY . /app/
 # Задаем переменную окружения для Flask (необязательно)
 ENV FLASK_APP=main.py
 
-# Открываем порт, на котором будет работать приложение
-EXPOSE 5000
-
-CMD ["python3", "main.py"]
+CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
