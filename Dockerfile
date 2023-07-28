@@ -21,3 +21,5 @@ ENV FLASK_APP=main.py
 
 # Открываем порт, на котором будет работать приложение
 EXPOSE 5000
+
+CMD ["python", "main.py"]
