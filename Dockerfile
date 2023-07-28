@@ -22,4 +22,4 @@ ENV FLASK_APP=main.py
 # Открываем порт, на котором будет работать приложение
 EXPOSE 5000
 
-CMD ["gunicorn", "main:app", "-b", "0.0.0.0:5000"]
+CMD ["python3", "main.py"]
