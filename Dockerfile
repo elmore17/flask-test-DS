@@ -19,6 +19,6 @@ COPY . /app/
 # Задаем переменную окружения для Flask (необязательно)
 ENV FLASK_APP=main.py
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD python3 main.py
