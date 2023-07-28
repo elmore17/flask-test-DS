@@ -23,4 +23,4 @@ ENV FLASK_APP=app.py
 EXPOSE 5000
 
 # Запускаем приложение при старте контейнера
-CMD ["flask", "run"]
+CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
