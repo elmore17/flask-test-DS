@@ -3,10 +3,20 @@ import os
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from flask import Flask, render_template, request
+import tarfile
+import urllib.request
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 app = Flask(__name__)
+
+url = "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz"
+data_dir = "./aclImdb"
+if not os.path.exists(data_dir):
+    urllib.request.urlretrieve(url, "aclImdb_v1.tar.gz")
+    with tarfile.open("aclImdb_v1.tar.gz", "r:gz") as tar:
+        tar.extractall()
+    os.remove("aclImdb_v1.tar.gz")
 
 # Загрузка обученной модели
 if not os.path.exists("test_DS.h5"):
@@ -15,7 +25,6 @@ if not os.path.exists("test_DS.h5"):
 
 model = tf.keras.models.load_model("test_DS.h5")
 tokenizer = None
-data_dir = "./aclImdb"
 
 def load_data(subset):
     texts = []
