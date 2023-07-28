@@ -17,7 +17,7 @@ RUN pip install -r requirements.txt
 COPY . /app/
 
 # Задаем переменную окружения для Flask (необязательно)
-ENV FLASK_APP=app.py
+ENV FLASK_APP=main.py
 
 # Открываем порт, на котором будет работать приложение
 EXPOSE 5000
