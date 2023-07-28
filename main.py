@@ -84,4 +84,4 @@ def index():
     return render_template('index.html', messageScore=messageScore,messageSentiment = messageSentiment, comment = comment)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=int("80"),debug=True)
+    app.run(host="0.0.0.0",port=int("3000"),debug=True)
